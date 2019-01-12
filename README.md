@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Shopify Web Engineer Intern Challenge - Summer 2019
 
 This project seeks to satisify the requirements found in the CHALLENGE.md file.
@@ -10,7 +8,7 @@ There are many solutions to this challenege, the aforementioned libraries where 
 - Simple to implement
 - Personal professional experience and preference.
 
-A hosted version can be found at [Hosted Version](http://shopify.elijahquartey.com/)
+A hosted version can be found at [http://shopify.elijahquartey.com/](http://shopify.elijahquartey.com/)
 
 ## Implementation
 
@@ -43,3 +41,5 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
