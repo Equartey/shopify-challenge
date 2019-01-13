@@ -32,7 +32,8 @@ const SearchBar = styled.input`
   flex: 1 1 auto;
   font-size: 2em;
   padding-left: 0.5em;
-
+  width: calc(100% - 65px);
+  
   :focus {
     border: 1px solid #4a9363;
     outline: #4a9363 auto 5px;
