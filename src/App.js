@@ -12,7 +12,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      limit: 5,
       query: "",
       resultData: [],
       data: []
@@ -27,6 +26,14 @@ class App extends Component {
   fetchData() {
     // construct url
     const URL = `https://secure.toronto.ca/cc_sr_v1/data/swm_waste_wizard_APR`;
+
+    /*
+      I do not love this solution as it only grabs 1000 entries and there could be more. 
+      To save resources, ideally the solution should pass the search query as a parameter to the API.
+      I throughly researched ODATA, REST API, JSON API, and other paradigms without any luck.  
+      I could not find sufficent documentation to use a to impelment this.
+      And given the vauge challenge description, I could see either solution fit.
+    */
     const PARAMS = `?limit=1000`;
 
     // GET from url
@@ -52,6 +59,7 @@ class App extends Component {
 
   // Store and update search string
   updateQuery(ev) {
+    // store search value
     this.setState({ query: ev.target.value });
     // clear waste data
     if (ev.target.value === "") this.setState({ resultData: [] });
