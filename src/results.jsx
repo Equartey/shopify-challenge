@@ -16,6 +16,9 @@ const Favorites = styled.div`
   }
 `;
 
+const QueryResults = styled.div`
+  padding-top: 5px;
+`;
 const StyledResults = styled.section`
   display: flex;
   flex-direction: column;
@@ -101,13 +104,13 @@ export default class Results extends Component {
 
     return (
       <StyledResults>
-        {/* {this.state.resultData && ( */}
-        <ResultItems
-          favorites={this.state.favorites}
-          FavoriteResult={this.FavoriteResult.bind(this)}
-          results={this.props.resultData}
-        />
-        {/* )} */}
+        <QueryResults>
+          <ResultItems
+            favorites={this.state.favorites}
+            FavoriteResult={this.FavoriteResult.bind(this)}
+            results={this.props.resultData}
+          />
+        </QueryResults>
         <Favorites>
           <h3>Favorites</h3>
           {/* renders favorites when there are favorites */}
