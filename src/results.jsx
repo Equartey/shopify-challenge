@@ -11,6 +11,7 @@ const Favorites = styled.div`
     color: #4a9363;
     font-size: 2em;
     margin: 0;
+    margin-bottom: 15px;
     padding: 0 15px;
   }
 `;
@@ -117,7 +118,6 @@ export default class Results extends Component {
               results={this.state.favorites}
               isFavoriteList={true}
             />
-          )}
           )}
         </Favorites>
       </StyledResults>

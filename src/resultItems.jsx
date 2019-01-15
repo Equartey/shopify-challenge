@@ -53,18 +53,27 @@ export default class ResultItems extends PureComponent {
   }
 
   render() {
-    // Finds a specific favorite in the list and saves if fav count > 1
-    const favCount = this.props.favorites.find(fav => {
-      if (
-        fav.result.body === this.props.results.body &&
-        fav.result.title === this.props.results.title
-      ) {
-        return fav.count > 1;
+    // creates markup for a result item
+    const createResult = result => {
+      // handles favorite object.
+      if (result.count) {
+        result = result.result;
       }
-      return null;
-    });
 
-    const createResult = (result, isFavoriteList) => {
+      // Finds a specific favorite in the list and saves if fav count > 1
+      let favCount = this.props.favorites.find(fav => {
+        if (
+          fav.result.body === result.body &&
+          fav.result.title === result.title
+        ) {
+          return fav.count > 1;
+        }
+        return null;
+      });
+
+      // Do not render favorite item when fav count less than 2
+      if (this.props.isFavoriteList && favCount === undefined) return;
+
       return (
         <Result
           id={result.id}
@@ -73,7 +82,7 @@ export default class ResultItems extends PureComponent {
           <Star
             favorites={favCount !== undefined}
             onClick={() =>
-              this.props.FavoriteResult(this, result, isFavoriteList)
+              this.props.FavoriteResult(this, result, this.props.isFavoriteList)
             }
           >
             {/* SVG courtesy of Ionicons */}
@@ -94,6 +103,4 @@ export default class ResultItems extends PureComponent {
     // returns the markup for a result entry
     return this.props.results.map(createResult);
   }
-
-  // }
 }
