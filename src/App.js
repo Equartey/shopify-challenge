@@ -46,14 +46,14 @@ class App extends Component {
   runQuery() {
     if (this.state.query === "") return; // don't run an empty query
 
-    // filter data array based on keywords
-    let searchResults = this.state.data.filter(data =>
-      data.keywords.toLowerCase().includes(this.state.query.toLowerCase())
-    );
-
     // save results for displaying
-    this.setState({
-      resultData: searchResults
+    this.setState(state => {
+      // filter data array based on keywords
+      return {
+        resultData: state.data.filter(data =>
+          data.keywords.toLowerCase().includes(state.query.toLowerCase())
+        )
+      };
     });
   }
 
