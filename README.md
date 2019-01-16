@@ -10,6 +10,8 @@ There are many solutions to this challenege, the aforementioned libraries where 
 
 A hosted version can be found at [http://shopify.elijahquartey.com/](http://shopify.elijahquartey.com/)
 
+Having issues? Checkout the mirror on Github pages: [https://equartey.github.io/shopify-challenge/](https://equartey.github.io/shopify-challenge/)
+
 ## Implementation
 
 - Using Fetch API, GET and store data from Waste Wizard Lookup.
